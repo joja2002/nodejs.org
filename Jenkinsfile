@@ -2,15 +2,14 @@ def serverIP = 'soe data'
 
 pipeline {
   agent any
-  options {
-    skipDefaultCheckout(true)
-  }
+  
   parameters {
     string(name: 'server_ip', defaultValue: '')
   }
   environment {
     registry = "janaakamall/janaakamallnodeapp"
     registryCredential = 'docker_credentials'
+
   }
 
   stages {
